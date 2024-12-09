@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skaidriu uzduotys</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="pirmas">
+        <h1 id="pirma-antraste">Pirma antraštė</h1>
+        <p id="pirmas-paragrafas">Pirmas paragrafas</p>
+    </div>
+
+    <div id="antras">
+        <p id="paragrafo-tekstas">
+            Si teksta turime matyti konsoleje
+        </p>
+    </div>
+
+    <div id="trecias">
+        <p>Turime matyti konsoleje paragrafa arba tik teksta</p>
+    </div>
+
+    <div id="ketvirtas">
+        <button onclick="document.getElementById('paragrafas-pakeitimui').innerHTML = 'Pakeisto paragrafo tekstas'">
+            Pakeisti teksta
+        </button>
+        <p id="paragrafas-pakeitimui">Nepakeistas paragrafo tekstas</p>
+    </div>  
+
+    <div id="penktas">
+        <button onclick="document.getElementById('paragrafas-5').style.fontSize = '35px'">
+            pakeisti dydi
+        </button>
+        <button onclick="document.getElementById('paragrafas-5').style.color = 'red'">
+            pakeisti spalva
+        </button>
+        <p id="paragrafas-5">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, perspiciatis? Odio ut nulla voluptatum harum a ad! Nam dolore placeat similique possimus exercitationem, in hic laboriosam quo vel accusamus dolorum.
+        </p>
+    </div>
+
+    <div id="sestas">
+        <p>
+            <img src="light-off.png" alt="lempute" id="lempute">
+        </p>
+
+        <button onclick="document.getElementById('lempute').src = 'light-on.png'">
+            Įjungti lemputę
+        </button>
+        <button onclick="document.getElementById('lempute').src = 'light-off.png'">
+            Įšjungti lemputę
+        </button>
+    </div>
+
+    <div id="septintas">
+        <button onclick="pakeisti()">Pakeisti tekstą</button>
+        <p id="septinto-tekstas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque consequatur recusandae, sequi porro deserunt quibusdam incidunt iste ipsam. Enim, perspiciatis.</p>
+    </div>
+
+    <div id="astuntas">
+        <button onclick="pakeisti2('astunto-tekstas', 'vienas du trys')">Pakeisti tekstą 1</button>
+        <button onclick="pakeisti2('astunto-tekstas', 'batai kupranugaris meska')">Pakeisti tekstą 2</button>
+        <button onclick="pakeisti2('astunto-tekstas', 'stalas kede medis')">Pakeisti tekstą 3</button>
+        <button onclick="pakeisti2('astunto-tekstas', 'berzas obelis gyvate')">Pakeisti tekstą 4</button>
+
+    <p id="astunto-tekstas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ad placeat consequatur ullam id. Molestiae aspernatur asperiores repellendus ratione eveniet maiores voluptate accusantium facilis reprehenderit! A accusamus molestiae natus minima.</p>
+
+    </div>
+
+    <div id="devintas">
+        <button onclick="pakeisti3('devinto-tekstas', 'vienas du trys')">Pakeisti tekstą 1</button>
+        <button onclick="pakeisti3('devinto-tekstas', 'batai kupranugaris meska')">Pakeisti tekstą 2</button>
+        <button onclick="pakeisti3('devinto-tekstas', 'stalas kede medis')">Pakeisti tekstą 3</button>
+        <button onclick="pakeisti3('devinto-tekstas', 'berzas obelis gyvate')">Pakeisti tekstą 4</button>
+        <br>
+
+        <button onclick="kitaSpalva('devinto-tekstas', 'black')">Juodai</button>
+        <button onclick="kitaSpalva('devinto-tekstas', 'red')">raudonai</button>
+        <button onclick="kitaSpalva('devinto-tekstas', 'green')">Zaliai</button>
+        <br>
+
+        <p id="devinto-tekstas">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi dignissimos provident eligendi amet voluptas sunt iusto incidunt esse assumenda! Magni ducimus placeat est harum? Mollitia quidem fugiat aut, nisi maxime velit! Nesciunt excepturi numquam aperiam necessitatibus? Odit laborum tempora aperiam.
+        </p>
+    </div>
+
+    <div id="desimtas">
+        <p id="suma"></p>
+        <p id="skirtumas"></p>
+        <p id="sandauga"></p>
+        <p id="dalmuo"></p>
+    </div>
+
+    <div id="vienuoliktas">
+        <div id="vienuolikto-turinys"></div>
+    </div>
+
+    <div id="dvyliktas">
+        <p>
+            Spalva:
+            <button onclick="keistiSpalva('dvylikto-tekstas', 'black')">Originali</button>
+            <button onclick="keistiSpalva('dvylikto-tekstas', 'red')">Raudona</button>
+            <button onclick="keistiSpalva('dvylikto-tekstas', 'royalblue')">Mėlyna</button>
+            <button onclick="keistiSpalva('dvylikto-tekstas', 'green')">Žalia</button>
+        </p>
+        <p>
+            Teksto dydis:
+            <button onclick="keistiDydi('dvylikto-tekstas', 16)">Originalus</button>
+            <button onclick="keistiDydi('dvylikto-tekstas', 18)">18px</button>
+            <button onclick="keistiDydi('dvylikto-tekstas', 24)">24px</button>
+            <button onclick="keistiDydi('dvylikto-tekstas', 12)">12px</button>
+        </p>
+        <p id="dvylikto-tekstas">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cupiditate ad, tempore soluta mollitia necessitatibus id perferendis quibusdam, modi minima accusamus ipsum ratione neque officiis.
+        </p>
+    </div>
+
+    <div id="tryliktas">
+        <div class="parametrai">
+            <div class="parametras">
+                <p>Plotis:</p>
+                <input type="range" min="100" max="500" value="100" id="plocio-slider">
+            </div>
+            <div class="parametras">
+                <p>Aukštis:</p>
+                <input type="range" min="100" max="500" value="100" id="aukscio-slider">
+            </div>
+            <div class="parametras">
+                <p>Spalva:</p>
+                <select id="spalvos-pasirinkimas">
+                    <option value="burlywood">Burlywood</option>
+                    <option value="black">Juoda</option>
+                    <option value="red">Raudona</option>
+                    <option value="green">Zalia</option>
+                </select>
+            </div>
+            <div class="parametras">
+                <p>Tekstas per vidurį:</p>
+                <input type="text" value="tekstas per viduri" id="tekstas-divui">
+            </div>
+        </div>
+        <div id="div-keitimui">
+            tekstas per vidurį
+        </div>
+
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
