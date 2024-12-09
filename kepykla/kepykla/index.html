@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="scripts.js" defer></script>
+    <!-- <script src="scripts.js" defer></script> -->
+     <script src="bandymas.js" defer></script>
 </head>
 <body>
     <header class="block-wrapper">
@@ -24,10 +25,12 @@
         <div class="input-wrapper">
             <label for="loaves-per-employee">Duonos kepalų per dieną (vienas darbuotojas):</label>
             <input type="number" min="0" step="1" value="0" id="loaves-per-employee">
+            <span class="error">Darbuotojas per dieną gali iškepti 100 kepalų max.</span>
         </div>
         <div class="input-wrapper">
             <label for="order-count">Užsakymų kiekis:</label>
             <input type="number" min="0" step="1" value="0" id="order-count">
+            <span class="error">Užsakymų kiekis negali viršyti 500 kepalų per dieną.</span>
         </div>
         <button id="calculate">Skaičiuoti</button>
         <button id="reset">Iš naujo</button>
