@@ -83,3 +83,17 @@ button:hover {
     background-color: rgba(17, 76, 124, 0.952);
     box-shadow: 0 0 5px 5px rgba(150, 170, 187, 0.952);
 }
+
+form input.error {
+    border-color: red;
+    background-color: rgba(235, 132, 132, 0.459);
+}
+
+form span.error {
+    color: red;
+    font-size: 12px;
+}
+
+form span.error:not(.show) {
+    display: none;
+}

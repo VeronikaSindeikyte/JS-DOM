@@ -108,7 +108,18 @@ function getCurrentDateTime() {
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
 }
 
+document.getElementById("salary").addEventListener('keyup', function(event) {
+    let inputValue = event.target.valueAsNumber;
+    console.log(inputValue)
 
-
+    if (inputValue < 0) {
+        event.target.classList.add('error');
+        event.target.nextElementSibling.classList.add('show');
+    } else {
+        event.target.classList.remove('error');
+        event.target.nextElementSibling.classList.remove('show');
+    }
+});
+ 
 
 
