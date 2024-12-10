@@ -18,13 +18,21 @@
         <h1>Pajamų ir išlaidų skaičiuoklė</h1>
         <form id="payment-form">
             <label for="pavadinimas">Įrašykite kur išleidote pinigus arba gautų pajamų šaltinį:</label>
-            <input type="text" id="pavadinimas" name="pavadinimas" required>
+            <input list="dropdown-options" id="pavadinimas" name="pavadinimas" required>
+            <datalist id="dropdown-options">
+              <option value="Mokesčiai">
+              <option value="Nuoma">
+              <option value="Kuras">
+              <option value="Maistas">
+              <option value="Pramogos">
+            </datalist>
             <label for="amount">Įrašykite gautų pajamų arba patirtų išlaidų sumą:</label>
             <input type="number" id="amount" name="amount" required>
             <label for="salary">Įrašykite savo mėnesio atlyginimą:</label>
             <input type="number" id="salary" name="salary" required>
             <span class="error">Atlyginimas negali būti neigiamas skaičius.</span>
             <button type="submit">Pateikti</button>
+            <button type="reset" class="reset">Skaičiuoti iš naujo</button>
         </form>
         <div class="payments-wrapper"></div>
         <div class="balance-wrapper"></div>

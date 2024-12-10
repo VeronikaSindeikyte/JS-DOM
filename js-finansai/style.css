@@ -15,7 +15,7 @@ html, body {
     max-width:600px;
     margin:50px auto;
     border: 1px solid black;
-    border-radius: 10%;
+    border-radius: 40px;
     box-shadow: 0 0 10px 5px rgba(17, 76, 124, 0.952);
 }
 
@@ -40,7 +40,6 @@ p.id {font-size: 20px;}
 .balance-wrapper {
     background-color:#ededed;
     padding:20px 30px;
-    border: 1px solid black;
     border-radius: 0 0 40px 40px;
     box-shadow: 0 0 -10px 5px rgba(17, 76, 124, 0.952);
 }
@@ -69,7 +68,6 @@ button, input {
     height: 30px;
     text-align: center;
     align-self: center;
-    
 }
 
 button {

@@ -22,7 +22,6 @@ function load_data(data_wrapper_selector, data_array, balance_wrapper_selector) 
     console.log("Mėnesio atlyginimas:", monthlySalary);
     console.log("Mėnesio atlyginimas:", typeof monthlySalary);
     console.log("Mėnesio atlyginimas:", !monthlySalary);
-    
 
     if (!monthlySalary) {
         monthlySalary = 0;
@@ -121,5 +120,6 @@ document.getElementById("salary").addEventListener('keyup', function(event) {
     }
 });
  
-
-
+document.querySelector('.reset').addEventListener('submit', function (event) {
+    
+});
