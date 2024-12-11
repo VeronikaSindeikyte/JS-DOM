@@ -19,11 +19,28 @@ html, body {
     box-shadow: 0 0 10px 5px rgba(17, 76, 124, 0.952);
 }
 
+#header {
+    display: flex;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.language-switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.language-switch img {
+    margin: 2px;
+    max-width: 28px;
+    max-height: 28px;
+}
+
 h1 {
     text-align: center;
-    padding:20px 30px;
-    margin:0;
-    border-bottom: 1px solid #e3e3e3;
+    padding: 20px 20px;
+    margin: 0;
 }
 
 .item-wrapper:not(:last-child) {border-bottom:1px solid #e3e3e3;}

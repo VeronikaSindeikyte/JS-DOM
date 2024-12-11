@@ -149,3 +149,17 @@ function resetToDefaultValues() {
     let resetButton = document.querySelector('.reset');
     resetButton.classList.remove('show');
 }
+
+document.getElementById("switch-en").addEventListener('click', function (event) {
+    let headerText = document.querySelector('.h1');
+    headerText.innerHTML = 'Income and expense calculator';
+
+    let pavadinimoTekstas = document.querySelector('.pavadinimoTekstas');
+    pavadinimoTekstas.innerHTML = 'Enter where you spent the money or source of income:'
+
+    let piniguTekstas = document.querySelector('.piniguTekstas');
+    piniguTekstas.innerHTML = 'Enter the amount of income received or expenses incurred:';
+
+    let atlyginimoTekstas = document.getElementById('atlyginimoTekstas');
+    atlyginimoTekstas.innerHTML = 'Enter your monthly salary:';
+})

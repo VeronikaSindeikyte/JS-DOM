@@ -15,9 +15,15 @@
 </head>
 <body>
     <div class="page-content">
-        <h1>Pajamų ir išlaidų skaičiuoklė</h1>
+        <div id="header">
+            <h1 class="h1">Pajamų ir išlaidų skaičiuoklė</h1>
+            <div class="language-switch">
+                <img src="icons/lithuanian.png" alt="Lithuanian" class="flag" id="switch-lt">
+                <img src="icons/united-kingdom.png" alt="English" class="flag" id="switch-en">
+            </div>
+        </div>
         <form id="payment-form">
-            <label for="pavadinimas">Įrašykite kur išleidote pinigus arba gautų pajamų šaltinį:</label>
+            <label for="pavadinimas" class="pavadinimoTekstas">Įrašykite kur išleidote pinigus arba gautų pajamų šaltinį:</label>
             <input list="dropdown-options" id="pavadinimas" name="pavadinimas">
                 <datalist id="dropdown-options">
                     <option value="Mokesčiai"></option>
@@ -26,9 +32,9 @@
                     <option value="Maistas"></option>
                     <option value="Pramogos"></option>   
                 </datalist>
-            <label for="amount">Įrašykite gautų pajamų arba patirtų išlaidų sumą:</label>
+            <label for="amount" class="piniguTekstas">Įrašykite gautų pajamų arba patirtų išlaidų sumą:</label>
             <input type="number" id="amount" name="amount" required>
-            <label for="salary">Įrašykite savo mėnesio atlyginimą:</label>
+            <label for="salary" id="atlyginimoTekstas">Įrašykite savo mėnesio atlyginimą:</label>
             <input type="number" id="salary" name="salary" required>
             <span class="error">Atlyginimas negali būti neigiamas skaičius.</span>
             <div class="mygtukai">
