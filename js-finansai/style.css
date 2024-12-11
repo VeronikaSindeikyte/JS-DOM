@@ -99,3 +99,16 @@ form span.error:not(.show) {
 .reset:not(.show) {
     display: none;
 }
+
+.mygtukai {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+@media (max-width: 600px) {
+    .mygtukai {
+        flex-direction: column;
+        align-items: center;
+    }
+}

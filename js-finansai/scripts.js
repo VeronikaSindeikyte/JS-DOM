@@ -147,8 +147,8 @@ function resetToDefaultValues() {
     `;
 
     const payments_wrapper = document.querySelector('.payments-wrapper');
-
     payments_wrapper.innerHTML = ``;
+    payments = [];
 
     let resetButton = document.querySelector('.reset');
     resetButton.classList.remove('show');
