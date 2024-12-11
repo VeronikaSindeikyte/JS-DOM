@@ -1,3 +1,3 @@
 # finance calculator
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![finance calculator](https://github.com/VeronikaSindeikyte/JS-DOM/blob/main/js-finansai/calculator-screenshot.png )
