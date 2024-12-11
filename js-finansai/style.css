@@ -54,9 +54,7 @@ form {
     border-bottom: 1px solid #e3e3e3;
 }
 
-form label {
-    padding: 10px 30px;
-}
+form label {padding: 10px 30px;}
 
 button, input {
     font-family: Parkinsans;
@@ -89,18 +87,13 @@ form span.error {
     font-size: 12px;
 }
 
-form span.error:not(.show) {
-    display: none;
-}
+form span.error:not(.show) {display: none;}
 
-.reset:not(.show) {
-    display: none;
-}
+.reset:not(.show) {display: none;}
 
 .mygtukai {
     display: flex;
-    justify-content: space-around;
-    
+    justify-content: space-around; 
 }
 
 @media (max-width: 600px) {
