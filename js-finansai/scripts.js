@@ -162,4 +162,101 @@ document.getElementById("switch-en").addEventListener('click', function (event) 
 
     let atlyginimoTekstas = document.getElementById('atlyginimoTekstas');
     atlyginimoTekstas.innerHTML = 'Enter your monthly salary:';
+
+    let submitButton = document.querySelector('.submit');
+    submitButton.innerHTML = 'Submit';
+
+    function load_data(data_wrapper_selector, data_array, balance_wrapper_selector) {
+        let data_wrapper = document.querySelector(data_wrapper_selector);
+        let balance_wrapper = document.querySelector(balance_wrapper_selector);
+        let monthlySalary = document.getElementById("salary").valueAsNumber;
+    
+        if (!monthlySalary) {
+            monthlySalary = 0;
+        }
+    
+        for (const item of data_array) {
+            data_wrapper.innerHTML += `
+                <div class="item-wrapper">
+                    <p class="id">ID: ${item.id}</p>
+                    <p class="type ${item.type}">
+                        ${item.type == 'income' ? 'Income' : 'Expense'}
+                    </p> 
+                    <p class="amount ${item.type}">${item.amount} €</p>
+                    <p class="when">${item.when}</p>
+                </div>
+            `;
+        }
+    
+        balance_wrapper.innerHTML = `
+            <h2> Monthly salary: ${monthlySalary} €</h2>
+            </h3>
+            <p>Income: <span class="income">${calculateIncome(data_array)} €</span></p>
+            <p>Expense: <span class="expense">${calculateExpense(data_array)} €</span></p>
+            <h3>Sum of incurred expenses and income:
+                <span class="${calculateBalance(data_array) > 0 ? 'income' : 'expense'}">
+                    ${calculateBalance(data_array)} €
+                </span>
+            <h2>Salary balance: ${monthlySalary + calculateBalance(data_array)} €</h2>
+        `;
+    }
+    
+    load_data('.payments-wrapper', payments, '.balance-wrapper');
+})
+
+
+document.getElementById("switch-lt").addEventListener('click', function (event) {
+
+    let headerText = document.querySelector('.h1');
+    headerText.innerHTML = 'Pajamų ir išlaidų skaičiuoklė';
+
+    let pavadinimoTekstas = document.querySelector('.pavadinimoTekstas');
+    pavadinimoTekstas.innerHTML = 'Įrašykite kur išleidote pinigus arba gautų pajamų šaltinį:'
+
+    let piniguTekstas = document.querySelector('.piniguTekstas');
+    piniguTekstas.innerHTML = 'Įrašykite gautų pajamų arba patirtų išlaidų sumą:';
+
+    let atlyginimoTekstas = document.getElementById('atlyginimoTekstas');
+    atlyginimoTekstas.innerHTML = 'Įrašykite savo mėnesio atlyginimą:';
+
+    let submitButton = document.querySelector('.submit');
+    submitButton.innerHTML = 'Pateikti';
+
+
+    function load_data(data_wrapper_selector, data_array, balance_wrapper_selector) {
+        let data_wrapper = document.querySelector(data_wrapper_selector);
+        let balance_wrapper = document.querySelector(balance_wrapper_selector);
+        let monthlySalary = document.getElementById("salary").valueAsNumber;
+    
+        if (!monthlySalary) {
+            monthlySalary = 0;
+        }
+    
+        for (const item of data_array) {
+            data_wrapper.innerHTML += `
+                <div class="item-wrapper">
+                    <p class="id">ID: ${item.id}</p>
+                    <p class="type ${item.type}">
+                        ${item.type == 'income' ? 'Pajamos' : 'Išlaidos'}
+                    </p> 
+                    <p class="amount ${item.type}">${item.amount} €</p>
+                    <p class="when">${item.when}</p>
+                </div>
+            `;
+        }
+    
+        balance_wrapper.innerHTML = `
+            <h2> Mėnesio atlyginimas: ${monthlySalary} €</h2>
+            </h3>
+            <p>Pajamos: <span class="income">${calculateIncome(data_array)} €</span></p>
+            <p>Išlaidos: <span class="expense">${calculateExpense(data_array)} €</span></p>
+            <h3>Patirtų išlaidų ir pajamų suma:
+                <span class="${calculateBalance(data_array) > 0 ? 'income' : 'expense'}">
+                    ${calculateBalance(data_array)} €
+                </span>
+            <h2>Atlyginimo likutis: ${monthlySalary + calculateBalance(data_array)} €</h2>
+        `;
+    }
+    
+    load_data('.payments-wrapper', payments, '.balance-wrapper');
 })
