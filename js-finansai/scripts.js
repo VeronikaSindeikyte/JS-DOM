@@ -70,7 +70,9 @@ document.getElementById('payment-form').addEventListener('submit', function(even
     const amount = parseFloat(document.getElementById('amount').value)
     const type = amount >= 0 ? 'income' : 'expense'
     let piniguSaltinioPavadinimas = document.getElementById("pavadinimas").value;
-
+    let resetButton = document.querySelector('.reset');
+    resetButton.classList.add('show');
+   
     payments.push({
         id: piniguSaltinioPavadinimas,
         type: type,
@@ -109,7 +111,7 @@ function getCurrentDateTime() {
 
 document.getElementById("salary").addEventListener('keyup', function(event) {
     let inputValue = event.target.valueAsNumber;
-    console.log(inputValue)
+    console.log(inputValue);
 
     if (inputValue < 0) {
         event.target.classList.add('error');
@@ -120,6 +122,35 @@ document.getElementById("salary").addEventListener('keyup', function(event) {
     }
 });
  
-document.querySelector('.reset').addEventListener('submit', function (event) {
-    
+document.querySelector("#payment-form").addEventListener('reset', function () {
+    resetToDefaultValues();
 });
+
+function resetToDefaultValues() {
+
+    const balance_wrapper = document.querySelector('.balance-wrapper');
+    
+    const defaultMonthlySalary = 0;
+    const defaultIncome = 0;
+    const defaultExpense = 0;
+    const defaultBalance = 0;
+
+    balance_wrapper.innerHTML = `
+        <h2> Mėnesio atlyginimas: ${defaultMonthlySalary} €</h2>
+        </h3>
+        <p>Pajamos: <span class="income">${defaultIncome} €</span></p>
+        <p>Išlaidos: <span class="expense">${defaultExpense} €</span></p>
+        <h3>Patirtų išlaidų ir pajamų suma:
+             <span class="expense">${defaultBalance} €</span>
+            </span>
+        <h2>Atlyginimo likutis: ${defaultBalance} €</h2>
+    `;
+
+    const payments_wrapper = document.querySelector('.payments-wrapper');
+
+    payments_wrapper.innerHTML = ``;
+
+    let resetButton = document.querySelector('.reset');
+    resetButton.classList.remove('show');
+}
+
