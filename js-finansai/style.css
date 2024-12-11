@@ -47,14 +47,11 @@ p.id {font-size: 20px;}
 h3 {margin:0;}
 
 form {
-    padding:15px 30px;
-    border-bottom: 1px solid #e3e3e3;
-}
-
-form {
     text-align: center;
     display: flex;
     flex-direction: column;
+    padding:15px 30px;
+    border-bottom: 1px solid #e3e3e3;
 }
 
 form label {

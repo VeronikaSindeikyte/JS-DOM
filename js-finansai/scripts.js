@@ -72,7 +72,10 @@ document.getElementById('payment-form').addEventListener('submit', function(even
     let piniguSaltinioPavadinimas = document.getElementById("pavadinimas").value;
     let resetButton = document.querySelector('.reset');
     resetButton.classList.add('show');
-   
+
+    let inputValueName = document.getElementById('pavadinimas');
+    inputValueName.value = '';
+
     payments.push({
         id: piniguSaltinioPavadinimas,
         type: type,
