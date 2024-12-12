@@ -37,7 +37,7 @@ function load_data(data_wrapper_selector, data_array, balance_wrapper_selector) 
             <div class="item-wrapper">
                 <p class="id">ID: ${item.id}</p>
                 <p class="type ${item.type}">
-                    ${item.type == 'income' ? 'Pajamos' : 'Išlaidos'}
+                    ${item.type == 'income' ? t.income : t.expense}
                 </p> 
                 <p class="amount ${item.type}">${item.amount} €</p>
                 <p class="when">${item.when}</p>
