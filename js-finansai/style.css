@@ -21,14 +21,16 @@ html, body {
 
 #header {
     display: flex;
+    justify-content: space-between;
     border-bottom: 1px solid #e3e3e3;
+    margin: 15px;
 }
 
 .language-switch {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin-right: 15px;
+    margin: 15px;
 
 }
 
@@ -40,8 +42,7 @@ html, body {
 
 h1 {
     text-align: center;
-    padding: 20px 20px;
-    margin: 0;
+    align-items: center;
 }
 
 .item-wrapper:not(:last-child) {border-bottom:1px solid #e3e3e3;}
